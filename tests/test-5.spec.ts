@@ -1,5 +1,31 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  // Recording...
+  await page.goto('https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dgoogle%26oq%3Dgoogle%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOdIBCDE3NTBqMGoyqAIAsAIB%26sourceid%3Dchrome%26ie%3DUTF-8%26sei%3DW3pSaMKyPNK5nesPnKqF8AQ&q=EgQbayn-GNz0ycIGIjAHrHVvj2hxQFvSuGE5ffpYqx6gxdXHIXE3GRs9u-s1lYXTGOc7bjI9icZjkIwlbdMyAVJaAUM');
+  await page.locator('iframe[name="a-phmbdsf8xee9"]').contentFrame().getByRole('checkbox', { name: 'I\'m not a robot' }).click();
+  await page.locator('iframe[name="c-phmbdsf8xee9"]').contentFrame().locator('tr:nth-child(2) > td:nth-child(3)').click();
+  await page.locator('iframe[name="c-phmbdsf8xee9"]').contentFrame().locator('.rc-canonical-car').click();
+  await page.locator('iframe[name="c-phmbdsf8xee9"]').contentFrame().locator('tr:nth-child(3) > td:nth-child(3)').click();
+  await page.locator('iframe[name="c-phmbdsf8xee9"]').contentFrame().getByText('Select all images with').click();
+  await page.locator('iframe[name="c-phmbdsf8xee9"]').contentFrame().getByRole('button', { name: 'Verify' }).click();
+  await page.getByRole('link', { name: 'Google Google https://www.google.co.in' }).click();
+  await page.getByRole('combobox', { name: 'Search' }).click();
+  await page.getByRole('combobox', { name: 'Search' }).fill('sele');
+  await page.getByText('selenium', { exact: true }).click();
+  await page.getByRole('link', { name: 'Selenium Selenium https://www' }).click();
+  await page.getByRole('button', { name: 'About' }).click();
+  await page.getByLabel('About').getByRole('link', { name: 'About Selenium' }).click();
+  await page.getByRole('link', { name: 'Read full story ' }).click();
+  await page.getByRole('heading', { name: 'Selenium IDE: Made in Japan' }).click();
+  await page.goto('https://www.selenium.dev/');
+  await page.getByRole('heading', { name: 'Selenium IDE' }).click();
+  await page.getByRole('heading', { name: 'Selenium WebDriver' }).click();
+  await page.getByRole('heading', { name: 'Selenium WebDriver' }).click();
+  await page.getByRole('link', { name: 'Read more ', exact: true }).first().click();
+  await page.getByRole('heading', { name: 'Actions API' }).getByRole('link').click();
+  await page.locator('#tabs-05-02-tab').click();
+  await page.locator('#tabs-05-04-tab').click();
+  await page.locator('#tabs-05-05-tab').click();
+  await page.locator('#tabs-05-05').getByText('View Complete Code').click();
+  await page.getByRole('button', { name: 'Close' }).click();
 });
